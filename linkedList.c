@@ -53,3 +53,15 @@ void genList(void){
  	return; 
 } 
  
+void print_list(void){
+	linknd_t *ndPtr; 
+	if (list -> next == NULL) /* 방어 코드 어차피 null이면 빠져나가서 어차피 와일문 조건에 있음 */ 
+	{
+		return;
+	}
+	ndPtr =(linknd_t*) list -> next; /* warning 없애기 위해 명시적 형변환 next를 보이드로 해서 */ 
+	while(ndPtr != NULL) {
+		printf ("%i ", ndPtr -> data);
+		ndPtr = ndPtr -> next;
+	}
+}
